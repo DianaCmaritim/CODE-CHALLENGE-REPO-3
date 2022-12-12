@@ -1,0 +1,24 @@
+{
+  "name": "code-challenge-repo-3",
+  "version": "1.0.0",
+  "description": "FLATDANGO MOVIE APP",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DianaCmaritim/CODE-CHALLENGE-REPO-3.git"
+  },
+  "keywords": [
+    "Movie",
+    "theatre",
+    "app"
+  ],
+  "author": "Diana Maritim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DianaCmaritim/CODE-CHALLENGE-REPO-3/issues"
+  },
+  "homepage": "https://github.com/DianaCmaritim/CODE-CHALLENGE-REPO-3#readme"
+}
