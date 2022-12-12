@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--linking html and css-->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Flatdango Movie App</title>
+</head>
+
+<body>
+
+    <nav class="navbar bg-dark">
+        <div class="container-fluid text-bg-dark d-flex justify-content-center">
+            <h2 class="text-light" id="headTitle">FLATDANGO CINEMAX</h2>
+
+
+        </div>
+
+        <div class="container-fluid text-bg-dark d-flex justify-content-center">
+            <!-- <a class="navbar-brand text-light">FLATDANGO CINEMAX</a> -->
+            <h4 class="text-light" id="descript">One Ticket For Endless Memories</h4>
+        </div>
+
+    </nav>
+
+
+<!--section for movie details-->
+    <div class="container mt-5" id="main-container">
+        <div class="row" id="film-details">
+            <div class="row mt-3" id="">
+
+
+                <div class="card col-4">
+
+
+
+                    <div>
+                        <h2 id="showingTitle">MOVIES SHOWING</h2>
+                        <ul class="list-group" id="showingMovie">
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul id="soldOut">
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <div class="card col-8">
+                    <h4 class="card-title" id="filmTitle">The Giant Gila Monster</h4>
+                    <img class="card-img-top"
+                        src="https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
+                        alt="Film details" id="poster" height="600" width="600">
+                    <p id="movieDescription">A giant lizard terrorizes a rural Texas community and a heroic teenager attempts to destroy the creature.</p>
+
+                    <ul class="d-flex justify-content-center me-2" id="mviedet">
+                        <li class="border border-secondary rounded me-2"  id="runtime"><span class="border-success me-2">Runtime:</span> 108 minutes</li>
+                        <li class="border border-secondary rounded me-2" id="showtime">Showtime: 04:00PM</li>
+                        <li class="border border-secondary rounded me-2" id="ticketsAvailable">Available Tickets 3</li>
+                    </ul>
+
+                    <button type="button" class="btn btn-warning" id="buyTicket">Buy Ticket</button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!--linking html and js-->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+
+</html>
