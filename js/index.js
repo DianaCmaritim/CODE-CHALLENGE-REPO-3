@@ -2,7 +2,7 @@ const url = "http://localhost:3000/films"
 
 document.addEventListener('DOMContentLoaded',()=>{
 //fetch data from the server
-    const moviePlaceHolder = ()=>{
+    const filmPlaceHolder = ()=>{
         fetch(url)
         .then(res =>res.json())
         .then(data =>{
@@ -11,20 +11,20 @@ document.addEventListener('DOMContentLoaded',()=>{
 
             const filmImg = document.getElementById("poster")
             const movieTitle = document.getElementById("filmTitle")
-            const movieDescr = document.getElementById("movieDescription")
+            const movieDescription = document.getElementById("movieDescription")
             const runningTime = document.getElementById("runtime")
             const showingTime = document.getElementById("showtime")
             const availTicket =document.getElementById("ticketsAvailable")
             filmImg.src = firstMovie.poster
             movieTitle.innerText = firstMovie.title
-            movieDescr.textContent = firstMovie.decription
+            movieDescription.textContent = firstMovie.decription
             runningTime.innerText =`Runtime: ${firstMovie.runtime} minutes`
             showingTime.innerText =`Showtime: ${firstMovie.showtime}`
             availTicket.innerText =`Tickets Available: (${firstMovie.capacity - firstMovie.tickets_sold})`
 
 
             const ticketBuy = document.getElementById("buyTicket")
-            let tickets = Number(firstMovie.capacity - firstMovie.tickets_sold)
+            let tickets = firstMovie.capacity - firstMovie.tickets_sold
 
             ticketBuy.addEventListener('click',()=>{
 
@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded',()=>{
                 // const ticketRemaining = tickets-1
 
                 if(tickets <= 0){
-                    const frstMovie = document.getElementById("1")
+                    const frstMovie = document.getElementById("0")
                     frstMovie.innerHTML=`${firstMovie.title}  <span class="badge bg-danger me-1">SOLD OUT</span>`
 
-                    availTicket.innerHTML = `Ticketd available:  <span class="badge bg-danger">SOLD OUT</span>`
+                    availTicket.innerHTML = `Tickets available:  <span class="badge bg-danger">SOLD OUT</span>`
                 }else{
                     availTicket.innerText = `Tickets available: (${tickets})`
                 }
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             let item = data[i]
             console.log(item)
             const movieList = document.createElement("li")
-            const list = document.getElementById("showingMovie")
+            const list = document.getElementById("movieShowing")
 
             movieList.classList.add("list-group-item", "border", "border-info")
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                 const filmDescr = document.getElementById("movieDescription")
                 const runTime = document.getElementById("runtime")
                 const showTime = document.getElementById("showtime")
-                const availTickets =document.getElementById("ticketsAvailable")
+                const getTickets =document.getElementById("ticketsAvailable")
 
 
                 filmImage.src = item.poster
@@ -84,24 +84,24 @@ document.addEventListener('DOMContentLoaded',()=>{
                 filmDescr.textContent = item.decription
                 runTime.innerHTML =`Runtime:<span>${item.runtime}</span>`
                 showTime.innerText =`Showtime: ${item.showtime}`
-                availTickets.innerText =`Tickets available: (${item.capacity - item.tickets_sold})`
+                getTickets.innerText =`Tickets available: (${item.capacity - item.tickets_sold})`
 
-                const ticketsBuy = document.getElementById("buyTicket")
-                let remTicket = Number(item.capacity - item.tickets_sold)
+                const purchaseTicket = document.getElementById("buyTicket")
+                let remTicket = (item.capacity-item.tickets_sold)
 
-                ticketsBuy.addEventListener('click',()=>{
+                purchaseTicket.addEventListener('click',()=>{
 
                     // const remaining tickets = ticket-1
                     //decrementing the number of tickets after each purchase
-                    remTicket --
+                    remTicket--
                     if(remTicket <= 0){
                         movieList.innerHTML =`${item.title} <span class="badge bg-danger">SOLD OUT</span>`
 
-                        availTickets.innerHTML = `Ticket available: <span class="badge bg-danger">SOLD OUT</span>`
+                        getTickets.innerHTML = `Ticket available: <span class="badge bg-danger">SOLD OUT</span>`
 
                     }else{
 
-                        availTickets.innerText = `Tickets available: (${ticket})`
+                        getTickets.innerText = `Tickets available: [${remTicket}]`
                     }
 
                 })
@@ -122,6 +122,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 //call the functions
 filmDetails()
-moviePlaceHolder()
+filmPlaceHolder()
 
 })
