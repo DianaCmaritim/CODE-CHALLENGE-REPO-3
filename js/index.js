@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             movieList.addEventListener('click',()=>{
                 const filmImage = document.getElementById("poster")
                 const filmTitle = document.getElementById("filmTitle")
-                const filmDescr = document.getElementById("movieDescription")
+                const filmDescription = document.getElementById("movieDescription")
                 const runTime = document.getElementById("runtime")
                 const showTime = document.getElementById("showtime")
                 const ticketsAvailable =document.getElementById("ticketsAvailable")
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
                 filmImage.src = item.poster
                 filmTitle.innerText = item.title
-                filmDescr.textContent = item.decription
+                filmDescription.innerText = `Description:${item.description}`
                 runTime.innerHTML =`Runtime:${item.runtime} minutes`
                 showTime.innerText =`Showtime: ${item.showtime}`
                 ticketsAvailable.innerText =`Tickets available: (${item.capacity - item.tickets_sold})`
