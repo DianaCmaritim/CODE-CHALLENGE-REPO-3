@@ -126,4 +126,3 @@ filmPlaceHolder()
 
 })
 
-fetch(url)

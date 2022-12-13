@@ -1,10 +1,9 @@
-
 #filmTitle{
-  text-align:left
+  text-align:left,
 }
 /*used a background image from the link below*/
 body{
-  background-image: url("https://images.pexels.com/photos/269140/pexels-photo-269140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+ background-image: url("https://images.pexels.com/photos/269140/pexels-photo-269140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 }
 
 #showingTitle{
