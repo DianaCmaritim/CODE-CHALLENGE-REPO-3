@@ -46,7 +46,7 @@ Run the command<br>
 
 Open the file in a browser of your choice
 
-
+This project has been deployed and it can be accessed via this link[https://dianacmaritim.github.io/CODE-CHALLENGE-REPO-3/]
 
 ## Author
 Diana Maritim
