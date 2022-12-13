@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded',()=>{
             const movieDescription = document.getElementById("movieDescription")
             const runningTime = document.getElementById("runtime")
             const showingTime = document.getElementById("showtime")
-            const availTicket =document.getElementById("ticketsAvailable")
+            const availableTicket =document.getElementById("ticketsAvailable")
             filmImg.src = firstMovie.poster
             movieTitle.innerText = firstMovie.title
             movieDescription.textContent = firstMovie.decription
             runningTime.innerText =`Runtime: ${firstMovie.runtime} minutes`
             showingTime.innerText =`Showtime: ${firstMovie.showtime}`
-            availTicket.innerText =`Tickets Available: (${firstMovie.capacity - firstMovie.tickets_sold})`
+            availableTicket.innerText =`Tickets Available: (${firstMovie.capacity - firstMovie.tickets_sold})`
 
 
             const ticketBuy = document.getElementById("buyTicket")
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded',()=>{
                     const frstMovie = document.getElementById("0")
                     frstMovie.innerHTML=`${firstMovie.title}  <span class="badge bg-danger me-1">SOLD OUT</span>`
 
-                    availTicket.innerHTML = `Tickets available:  <span class="badge bg-danger">SOLD OUT</span>`
+                    availableTicket.innerHTML = `Tickets available:  <span class="badge bg-danger">SOLD OUT</span>`
                 }else{
-                    availTicket.innerText = `Tickets available: (${tickets})`
+                    availableTicket.innerText = `Tickets available: (${tickets})`
                 }
             })
 
@@ -76,15 +76,15 @@ document.addEventListener('DOMContentLoaded',()=>{
                 const filmDescr = document.getElementById("movieDescription")
                 const runTime = document.getElementById("runtime")
                 const showTime = document.getElementById("showtime")
-                const getTickets =document.getElementById("ticketsAvailable")
+                const ticketsAvailable =document.getElementById("ticketsAvailable")
 
 
                 filmImage.src = item.poster
                 filmTitle.innerText = item.title
                 filmDescr.textContent = item.decription
-                runTime.innerHTML =`Runtime:<span>${item.runtime}</span>`
+                runTime.innerHTML =`Runtime:${item.runtime} minutes`
                 showTime.innerText =`Showtime: ${item.showtime}`
-                getTickets.innerText =`Tickets available: (${item.capacity - item.tickets_sold})`
+                ticketsAvailable.innerText =`Tickets available: (${item.capacity - item.tickets_sold})`
 
                 const purchaseTicket = document.getElementById("buyTicket")
                 let remTicket = (item.capacity-item.tickets_sold)
@@ -97,11 +97,11 @@ document.addEventListener('DOMContentLoaded',()=>{
                     if(remTicket <= 0){
                         movieList.innerHTML =`${item.title} <span class="badge bg-danger">SOLD OUT</span>`
 
-                        getTickets.innerHTML = `Ticket available: <span class="badge bg-danger">SOLD OUT</span>`
+                        ticketsAvailable.innerHTML = `Ticket available: <span class="badge bg-danger">SOLD OUT</span>`
 
                     }else{
 
-                        getTickets.innerText = `Tickets available: [${remTicket}]`
+                        ticketsAvailable.innerText = `Tickets available: [${remTicket}]`
                     }
 
                 })
