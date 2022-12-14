@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 //iterate over all the movies in the list using for loop
         console.log(data.films)
         for(let i = 0; i < data.length; i++){
-            let item = data[i]
+            let item = data.films[i]
             console.log(item)
             const movieList = document.createElement("li")
             const list = document.getElementById("movieShowing")
