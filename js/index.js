@@ -1,4 +1,4 @@
-const url = "https://code-challenge-repo-3.vercel.app/db.json"
+const url = "https://dianacmaritim.github.io/CODE-CHALLENGE-REPO-3/db.json"
 
 document.addEventListener('DOMContentLoaded',()=>{
 //fetch data from the server
@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded',()=>{
         fetch(url)
         .then(res =>res.json())
         .then(data =>{
-          console.log(data.films)
-            const firstMovie = data[0]
+          console.log(data)
+            const firstMovie = data.films[0]
 
             const filmImg = document.getElementById("poster")
             const movieTitle = document.getElementById("filmTitle")
@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     .then(response=>response.json())
     .then(data=>{
 //iterate over all the movies in the list using for loop
-        console.log(data.films)
-        for(let i = 0; i < data.length; i++){
-            let item = data.films[i]
+        console.log(data)
+        const movie = data.films
+        for(let i = 0; i < movie.length; i++){
+            let item = movie[i]
             console.log(item)
             const movieList = document.createElement("li")
             const list = document.getElementById("movieShowing")
